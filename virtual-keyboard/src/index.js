@@ -839,6 +839,8 @@ const buttons = {
    },
 };
 const buttonsBlocked = ['ShiftLeft','ShiftRight','ControlLeft','ControlRight','MetaLeft','AltLeft','AltRight','CapsLock'];
+const buttonElements = [];
+const buttonVariables = [];
 class button {
    constructor(buttonName, buttonClass) {
       this.buttonName = buttonName;
@@ -871,6 +873,7 @@ class button {
       btn.addEventListener('mouseup', (e) => {
          btn.classList.remove('active');
       })
+      buttonElements.push(btn)
       return btn;
 
       function createLang(language, dataObj) {
@@ -902,6 +905,7 @@ class button {
          shiftCaps.classList.add( 'value','shiftCaps' , 'hidden');
          shiftCaps.textContent = shiftCapsValue;
          lang.append(caseDown,caseUp,caps,shiftCaps);
+         buttonVariables.push(caseDown,caseUp,caps,shiftCaps)
          return lang;
       }
    }
@@ -940,25 +944,72 @@ class Keyboard {
       }
       return row;
    }
+   createListener() {
+      window.addEventListener('keydown', (event) => {
+         if (event.code === 'ShiftLeft' || event.code === 'ShiftRight') {
+            const shift = document.querySelector(`.${event.code}`)
+            console.log(shift)
+            if (shift.classList.contains('active')) {
+               return false;
+            }
+            shift.classList.add('active')
+            changeActive('caseUp')
+            
+            function changeActive(type) {
+               buttonVariables.forEach(btn => {
+                  if (!btn.classList.contains('hidden')) {
+                     btn.classList.add('hidden')
+                  }
+                  else if (btn.classList.contains(type)) {
+                     btn.classList.remove('hidden');
+                  }
+               })
+            }
+         } else {
+            const code = event.code;
+            const key = document.querySelector(`.${code}`);
+            if (checkBtn(key,event) === false) {
+               return false;
+            }
+            if (checkBlocked(key,event) === false) {
+               return false;
+            }
+            const language = key.querySelectorAll('.language')
+            document.querySelector(`.${event.code}`).classList.add('active');
+            addText(language)
+         }
+      })
+      window.addEventListener('keyup', (event) => {
+         if (event.code === 'ShiftLeft' || event.code === 'ShiftRight') {
+            buttonVariables.forEach(btn => {
+               if (btn.classList.contains('caseDown')) {
+                  btn.classList.remove('hidden');
+               } else if (btn.classList.contains('caseUp')) {
+                  btn.classList.add('hidden');
+               }
+            })
+            //if (localStorage.getItem('currentLanguage') === 'eng') {
+            //   for (let button of buttonElements) {
+            //      button.querySelector('.rus').classList.add('hidden')
+            //      button.querySelector('.eng').classList.remove('hidden');
+            //   }
+            //} else {
+            //   button.querySelector('.rus').classList.remove('hidden')
+            //   button.querySelector('.eng').classList.add('hidden');
+            //}
+         }
+         const code = event.code;
+         document.querySelector(`.${code}`).classList.remove('active');
+      })
+   }
 }
 const area = new Area();
 const keyboard = new Keyboard();
 area.setArea();
 keyboard.setKeyboard();
+keyboard.createListener();
+localStorage.setItem('currentLanguage', 'eng')
 
-window.addEventListener('keydown', (e) => {
-   const code = e.code;
-   document.querySelector(`.${code}`).classList.add('active');
-   const key = document.querySelector(`.${code}`);
-   if (checkBtn(key,e) === false) {
-      return false;
-   }
-   if (checkBlocked(key,e) === false) {
-      return false;
-   }
-   const language = key.querySelectorAll('.language')
-   addText(language)
-});
 
 function checkBtn(key,event) {
    if (key.classList.contains('Backspace')) {
@@ -981,7 +1032,10 @@ function checkBtn(key,event) {
       const area = document.querySelector('.area')
       area.textContent += '    '
       return false;
-   } 
+   }  
+   //else if (key.classList.contains('ShiftLeft') || key.classList.contains('ShiftRight')) {
+   //   console.log('here')
+   //}
 }
 function checkBlocked(key, event) {
    for (let button of buttonsBlocked) {
@@ -1011,7 +1065,3 @@ function addText(elements) {
       }
    }
 }
-window.addEventListener('keyup', (e) => {
-   const code = e.code;
-   document.querySelector(`.${code}`).classList.remove('active');
-})

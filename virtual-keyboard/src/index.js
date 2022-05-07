@@ -1,7 +1,9 @@
+'use strict';
 import './styles/style.scss';
 const buttons = {
    row1: {
       button1: {
+         code: 'Backquote',
          rus: {
             caseDown: '',
             caseUp: '',
@@ -16,6 +18,7 @@ const buttons = {
          }
       },
       button2: {
+         code: 'Digit1',
          general: {
             caseDown: '1',
             caseUp: '!',
@@ -24,6 +27,7 @@ const buttons = {
          }
       },
       button3: {
+         code: 'Digit2',
          rus: {
             caseDown: '2',
             caseUp: '"',
@@ -38,6 +42,7 @@ const buttons = {
          }
       },
       button4: {
+         code: 'Digit3',
          rus: {
             caseDown: '3',
             caseUp: '№',
@@ -52,6 +57,7 @@ const buttons = {
          }
       },
       button5: {
+         code: 'Digit4',
          rus: {
             caseDown: '4',
             caseUp: ';',
@@ -66,6 +72,7 @@ const buttons = {
          }
       },
       button6: {
+         code: 'Digit5',
          general: {
             caseDown: '5',
             caseUp: '%',
@@ -74,6 +81,7 @@ const buttons = {
          }
       },
       button7: {
+         code: 'Digit6',
          rus: {
             caseDown: '6',
             caseUp: ':',
@@ -88,6 +96,7 @@ const buttons = {
          }
       },
       button8: {
+         code: 'Digit7',
          rus: {
             caseDown: '7',
             caseUp: '?',
@@ -102,6 +111,7 @@ const buttons = {
          }
       },
       button9: {
+         code: 'Digit8',
          general: {
             caseDown: '8',
             caseUp: '*',
@@ -110,6 +120,7 @@ const buttons = {
          }
       },
       button10: {
+         code: 'Digit9',
          general: {
             caseDown: '9',
             caseUp: '(',
@@ -118,6 +129,7 @@ const buttons = {
          }
       },
       button11: {
+         code: 'Digit0',
          general: {
             caseDown: '0',
             caseUp: ')',
@@ -126,6 +138,7 @@ const buttons = {
          }
       },
       button12: {
+         code: 'Minus',
          general: {
             caseDown: '-',
             caseUp: '_',
@@ -134,6 +147,7 @@ const buttons = {
          }
       },
       button13: {
+         code: 'Equal',
          general: {
             caseDown: '=',
             caseUp: '+',
@@ -142,6 +156,7 @@ const buttons = {
          }
       },
       button14: {
+         code: 'Backspace',
          class: 'big--btn',
          general: {
             caseDown: 'Backspace',
@@ -153,6 +168,7 @@ const buttons = {
    },
    row2: {
       button1: {
+         code: 'Tab',
          general: {
             caseDown: 'Tab',
             caseUp: 'Tab',
@@ -161,6 +177,7 @@ const buttons = {
          }
       },
       button2: {
+         code: 'KeyQ',
          rus: {
             caseDown: 'й',
             caseUp: 'Й',
@@ -175,6 +192,7 @@ const buttons = {
          }
       },
       button3: {
+         code: 'KeyW',
          rus: {
             caseDown: 'ц',
             caseUp: 'Ц',
@@ -189,6 +207,7 @@ const buttons = {
          }
       },
       button4: {
+         code: 'KeyE',
          rus: {
             caseDown: 'у',
             caseUp: 'У',
@@ -203,6 +222,7 @@ const buttons = {
          }
       },
       button5: {
+         code: 'KeyR',
          rus: {
             caseDown: 'к',
             caseUp: 'К',
@@ -217,6 +237,7 @@ const buttons = {
          }
       },
       button6: {
+         code: 'KeyT',
          rus: {
             caseDown: 'е',
             caseUp: 'Е',
@@ -231,6 +252,7 @@ const buttons = {
          }
       },
       button7: {
+         code: 'KeyY',
          rus: {
             caseDown: 'н',
             caseUp: 'Н',
@@ -245,6 +267,7 @@ const buttons = {
          }
       },
       button8: {
+         code: 'KeyU',
          rus: {
             caseDown: 'г',
             caseUp: 'Г',
@@ -259,6 +282,7 @@ const buttons = {
          }
       },
       button9: {
+         code: 'KeyI',
          rus: {
             caseDown: 'ш',
             caseUp: 'Ш',
@@ -273,6 +297,7 @@ const buttons = {
          }
       },
       button10: {
+         code: 'KeyO',
          rus: {
             caseDown: 'щ',
             caseUp: 'Щ',
@@ -287,6 +312,7 @@ const buttons = {
          }
       },
       button11: {
+         code: 'KeyP',
          rus: {
             caseDown: 'з',
             caseUp: 'З',
@@ -301,6 +327,7 @@ const buttons = {
          }
       },
       button12: {
+         code: 'BracketLeft',
          rus: {
             caseDown: 'x',
             caseUp: 'X',
@@ -315,6 +342,7 @@ const buttons = {
          }
       },
       button13: {
+         code: 'BracketRight',
          rus: {
             caseDown: 'ъ',
             caseUp: 'Ъ',
@@ -329,6 +357,7 @@ const buttons = {
          }
       },
       button14: {
+         code: 'Backslash',
          rus: {
             caseDown: '\/',
             caseUp: '/',
@@ -343,6 +372,7 @@ const buttons = {
          }
       },
       button15: {
+         code: 'Delete',
          general: {
             caseDown: 'Del',
             caseUp: 'Del',
@@ -353,6 +383,7 @@ const buttons = {
    },
    row3: {
       button1: {
+         code: 'CapsLock',
          class: 'big--btn',
          general: {
             caseDown: 'CapsLock',
@@ -362,6 +393,7 @@ const buttons = {
          }
       },
       button2: {
+         code: 'KeyA',
          rus: {
             caseDown: 'ф',
             caseUp: 'Ф',
@@ -376,6 +408,7 @@ const buttons = {
          }
       },
       button3: {
+         code: 'KeyS',
          rus: {
             caseDown: 'ы',
             caseUp: 'Ы',
@@ -390,6 +423,7 @@ const buttons = {
          }
       },
       button4: {
+         code: 'KeyD',
          rus: {
             caseDown: 'в',
             caseUp: 'В',
@@ -404,6 +438,7 @@ const buttons = {
          }
       },
       button5: {
+         code: 'KeyF',
          rus: {
             caseDown: 'а',
             caseUp: 'А',
@@ -418,6 +453,7 @@ const buttons = {
          }
       },
       button6: {
+         code: 'KeyG',
          rus: {
             caseDown: 'п',
             caseUp: 'П',
@@ -432,6 +468,7 @@ const buttons = {
          }
       },
       button7: {
+         code: 'KeyH',
          rus: {
             caseDown: 'р',
             caseUp: 'Р',
@@ -446,6 +483,7 @@ const buttons = {
          }
       },
       button8: {
+         code: 'KeyJ',
          rus: {
             caseDown: 'о',
             caseUp: 'О',
@@ -460,6 +498,7 @@ const buttons = {
          }
       },
       button9: {
+         code: 'KeyK',
          rus: {
             caseDown: 'л',
             caseUp: 'Л',
@@ -474,6 +513,7 @@ const buttons = {
          }
       },
       button10: {
+         code: 'KeyL',
          rus: {
             caseDown: 'д',
             caseUp: 'Д',
@@ -488,6 +528,7 @@ const buttons = {
          }
       },
       button11: {
+         code: 'Semicolon',
          rus: {
             caseDown: 'ж',
             caseUp: 'Ж',
@@ -502,6 +543,7 @@ const buttons = {
          }
       },
       button12: {
+         code: 'Quote',
          rus: {
             caseDown: 'э',
             caseUp: 'Э',
@@ -516,6 +558,7 @@ const buttons = {
          }
       },
       button13: {
+         code: 'Enter',
          class: 'big--btn',
          general: {
             caseDown: 'Enter',
@@ -527,6 +570,7 @@ const buttons = {
    },
    row4: {
       button1: {
+         code: 'ShiftLeft',
          class: 'big--btn',
          general: {
             caseDown: 'Shift',
@@ -536,6 +580,7 @@ const buttons = {
          }
       },
       button2: {
+         code: 'KeyZ',
          rus: {
             caseDown: 'я',
             caseUp: 'Я',
@@ -550,6 +595,7 @@ const buttons = {
          }
       },
       button3: {
+         code: 'KeyX',
          rus: {
             caseDown: 'ч',
             caseUp: 'Ч',
@@ -564,6 +610,7 @@ const buttons = {
          }
       },
       button4: {
+         code: 'KeyC',
          rus: {
             caseDown: 'с',
             caseUp: 'С',
@@ -578,6 +625,7 @@ const buttons = {
          }
       },
       button5: {
+         code: 'KeyV',
          rus: {
             caseDown: 'м',
             caseUp: 'М',
@@ -592,6 +640,7 @@ const buttons = {
          }
       },
       button6: {
+         code: 'KeyB',
          rus: {
             caseDown: 'и',
             caseUp: 'И',
@@ -606,6 +655,7 @@ const buttons = {
          }
       },
       button7: {
+         code: 'KeyN',
          rus: {
             caseDown: 'т',
             caseUp: 'Т',
@@ -620,6 +670,7 @@ const buttons = {
          }
       },
       button8: {
+         code: 'KeyM',
          rus: {
             caseDown: 'ь',
             caseUp: 'Ь',
@@ -634,6 +685,7 @@ const buttons = {
          }
       },
       button9: {
+         code: 'Comma',
          rus: {
             caseDown: 'б',
             caseUp: 'Б',
@@ -648,6 +700,7 @@ const buttons = {
          }
       },
       button10: {
+         code: 'Period',
          rus: {
             caseDown: 'ю',
             caseUp: 'Ю',
@@ -662,6 +715,7 @@ const buttons = {
          }
       },
       button11: {
+         code: 'Slash',
          rus: {
             caseDown: '.',
             caseUp: ',',
@@ -676,6 +730,7 @@ const buttons = {
          }
       },
       button12: {
+         code: 'ArrowUp',
          general: {
             caseDown: '▲',
             caseUp: '▲',
@@ -684,6 +739,7 @@ const buttons = {
          },
       },
       button13: {
+         code: 'ShiftRight',
          class: 'big--btn',
          general: {
             caseDown: 'Shift',
@@ -695,6 +751,7 @@ const buttons = {
    },
    row5: {
       button1: {
+         code: 'ControlLeft',
          class : 'ctrl',
          general: {
             caseDown: 'Ctrl',
@@ -704,6 +761,17 @@ const buttons = {
          }
       },
       button2: {
+         code: 'MetaLeft',
+         class : 'ctrl',
+         general: {
+            caseDown: 'Win',
+            caseUp: 'Win',
+            caps: 'Win',
+            shiftCaps: 'Win'
+         }
+      },
+      button3: {
+         code: 'AltLeft',
          class : 'alt',
          general: {
             caseDown: 'Alt',
@@ -712,7 +780,8 @@ const buttons = {
             shiftCaps: 'Alt'
          }
       },
-      button3: {
+      button4: {
+         code: 'Space',
          class : 'space',
          general: {
             caseDown: '',
@@ -721,7 +790,8 @@ const buttons = {
             shiftCaps: ''
          }
       },
-      button4: {
+      button5: {
+         code: 'AltRight',
          class : 'alt',
          general: {
             caseDown: 'Alt',
@@ -730,7 +800,8 @@ const buttons = {
             shiftCaps: 'Alt'
          }
       },
-      button5: {
+      button6: {
+         code: 'ArrowLeft',
          general: {
             caseDown: '◄',
             caseUp: '◄',
@@ -738,7 +809,8 @@ const buttons = {
             shiftCaps: '◄'
          }
       },
-      button6: {
+      button7: {
+         code: 'ArrowDown',
          general: {
             caseDown: '▼',
             caseUp: '▼',
@@ -746,7 +818,8 @@ const buttons = {
             shiftCaps: '▼'
          }
       },
-      button7: {
+      button8: {
+         code: 'ArrowRight',
          general: {
             caseDown: '►',
             caseUp: '►',
@@ -754,7 +827,8 @@ const buttons = {
             shiftCaps: '►'
          }
       },
-      button8: {
+      button9: {
+         code: 'ControlRight',
          general: {
             caseDown: 'Ctrl',
             caseUp: 'Ctrl',
@@ -763,7 +837,8 @@ const buttons = {
          }
       },
    },
-}
+};
+const buttonsBlocked = ['ShiftLeft','ShiftRight','ControlLeft','ControlRight','MetaLeft','AltLeft','AltRight','CapsLock'];
 class button {
    constructor(buttonName, buttonClass) {
       this.buttonName = buttonName;
@@ -772,52 +847,62 @@ class button {
    createButton(buttonsInfoObj) {
       const btn = document.createElement('div');
       btn.classList.add('key');
+      btn.classList.add(buttonsInfoObj.code);
       if(buttonsInfoObj.class) {
-         btn.classList.add(buttonsInfoObj.class)
+         btn.classList.add(buttonsInfoObj.class);
       }
       if (buttonsInfoObj.general) {
-         btn.append(createLang('rus', buttonsInfoObj.general))
-         btn.append(createLang('eng', buttonsInfoObj.general))
+         btn.append(createLang('rus', buttonsInfoObj.general));
+         btn.append(createLang('eng', buttonsInfoObj.general));
       } else {
-         btn.append(createLang('rus', buttonsInfoObj.rus))
-         btn.append(createLang('eng', buttonsInfoObj.en))
+         btn.append(createLang('rus', buttonsInfoObj.rus));
+         btn.append(createLang('eng', buttonsInfoObj.en));
       }
-      //btn.addEventListener('keydown', () => {
-         //console.log(btn)
-         //document.querySelector('.area').textContent += btn.value
-      //})
+      btn.addEventListener('mousedown', (event) => {
+         btn.classList.add('active')
+         if (checkBtn(btn , event) === false) {
+            return false;
+         }
+         if (checkBlocked(btn,event) === false) {
+            return false;
+         }
+         addText(btn)
+      })
+      btn.addEventListener('mouseup', (e) => {
+         btn.classList.remove('active');
+      })
       return btn;
 
       function createLang(language, dataObj) {
          const lang = document.createElement('div');
          let caseDownValue,caseUpValue,capsValue, shiftCapsValue;
          if (language === 'rus') {
-            lang.classList.add('rus', 'hidden');
+            lang.classList.add('language','rus', 'hidden');
             caseDownValue = dataObj.caseDown;
             caseUpValue = dataObj.caseUp;
             capsValue = dataObj.caps;
             shiftCapsValue = dataObj.shiftCaps;
          } else {
-            lang.classList.add('eng');
+            lang.classList.add('language','eng');
             caseDownValue = dataObj.caseDown;
             caseUpValue = dataObj.caseUp;
             capsValue = dataObj.caps;
             shiftCapsValue = dataObj.shiftCaps;
          }
          const caseDown = document.createElement('div');
-         caseDown.classList.add('caseDown');
+         caseDown.classList.add( 'value','caseDown');
          caseDown.textContent = caseDownValue;
          const caseUp = document.createElement('div');
-         caseUp.classList.add('caseUp', 'hidden');
+         caseUp.classList.add( 'value','caseUp', 'hidden');
          caseUp.textContent = caseUpValue;
          const caps = document.createElement('div');
-         caps.classList.add('caps', 'hidden')
+         caps.classList.add( 'value','caps', 'hidden');
          caps.textContent = capsValue;
          const shiftCaps = document.createElement('div');
-         shiftCaps.classList.add('shiftCaps' , 'hidden')
+         shiftCaps.classList.add( 'value','shiftCaps' , 'hidden');
          shiftCaps.textContent = shiftCapsValue;
-         lang.append(caseDown,caseUp,caps,shiftCaps)
-         return lang
+         lang.append(caseDown,caseUp,caps,shiftCaps);
+         return lang;
       }
    }
 }
@@ -831,6 +916,7 @@ class Area {
       textArea.classList.add('area');
       textArea.cols = 50;
       textArea.rows = 5;
+      textArea.readOnly = 'false'; 
       document.body.append(textArea);
    }
 }
@@ -843,10 +929,8 @@ class Keyboard {
       wrapper.classList.add('keyboard');
       for (let row in buttons) {
          wrapper.append(this.setButtonsRow(buttons[row]));
-         console.log(wrapper)
       }
-      document.querySelector('body').append(wrapper)
-      //document.body.append(wrapper)
+      document.querySelector('body').append(wrapper);
    }
    setButtonsRow(obj) {
       const row = document.createElement('div');
@@ -859,9 +943,75 @@ class Keyboard {
 }
 const area = new Area();
 const keyboard = new Keyboard();
-area.setArea()
-keyboard.setKeyboard()
+area.setArea();
+keyboard.setKeyboard();
 
 window.addEventListener('keydown', (e) => {
-   //console.log(e)
+   const code = e.code;
+   document.querySelector(`.${code}`).classList.add('active');
+   const key = document.querySelector(`.${code}`);
+   if (checkBtn(key,e) === false) {
+      return false;
+   }
+   if (checkBlocked(key,e) === false) {
+      return false;
+   }
+   const language = key.querySelectorAll('.language')
+   addText(language)
+});
+
+function checkBtn(key,event) {
+   if (key.classList.contains('Backspace')) {
+      const area = document.querySelector('.area')
+      const areaContent = area.textContent
+      area.textContent = areaContent.slice(0, areaContent.length - 1);
+      return false;
+   } else if (key.classList.contains('Delete')) {
+      return false;
+   } else if (key.classList.contains('Enter')) {
+      const area = document.querySelector('.area')
+      area.textContent += '\n'
+      return false;
+   } else if (key.classList.contains('Space')) {
+      const area = document.querySelector('.area')
+      area.textContent += '  '
+      return false;
+   } else if (key.classList.contains('Tab')) {
+      event.preventDefault()
+      const area = document.querySelector('.area')
+      area.textContent += '    '
+      return false;
+   } 
+}
+function checkBlocked(key, event) {
+   for (let button of buttonsBlocked) {
+      if (key.classList.contains(button)) {
+         event.preventDefault()
+         return false;
+      }
+   }
+}
+
+function addText(elements) {
+   let search;
+   if (elements.length === undefined) {
+      search = elements.querySelectorAll('.language');
+   } else {
+      search = elements
+   }
+   for(let item of search) {
+      if (!item.classList.contains('hidden')) {
+         const values = item.querySelectorAll('.value');
+         values.forEach(element => {
+            if (!element.classList.contains('hidden')) {
+               const value = element.textContent;
+               document.querySelector('.area').textContent += value;
+            }
+         })
+      }
+   }
+}
+window.addEventListener('keyup', (e) => {
+   const code = e.code;
+   document.querySelector(`.${code}`).classList.remove('active');
 })

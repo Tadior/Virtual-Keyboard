@@ -854,12 +854,19 @@ class button {
       if(buttonsInfoObj.class) {
          btn.classList.add(buttonsInfoObj.class);
       }
+      let hiddenLanguage;
+         if (localStorage.getItem('currentLanguage') !== null) {
+            hiddenLanguage = localStorage.getItem('currentLanguage');
+         } else {
+            localStorage.setItem('currentLanguage', 'eng');
+            hiddenLanguage = 'eng';
+         }
       if (buttonsInfoObj.general) {
-         btn.append(createLang('rus', buttonsInfoObj.general));
-         btn.append(createLang('eng', buttonsInfoObj.general));
+         btn.append(createLang('rus', buttonsInfoObj.general, hiddenLanguage));
+         btn.append(createLang('eng', buttonsInfoObj.general, hiddenLanguage));
       } else {
-         btn.append(createLang('rus', buttonsInfoObj.rus));
-         btn.append(createLang('eng', buttonsInfoObj.en));
+         btn.append(createLang('rus', buttonsInfoObj.rus, hiddenLanguage));
+         btn.append(createLang('eng', buttonsInfoObj.en, hiddenLanguage));
       }
       //------------------------ Click on button----------------------------------
       btn.addEventListener('mousedown', (event) => {
@@ -897,21 +904,28 @@ class button {
       buttonElements.push(btn)
       return btn;
 
-      function createLang(language, dataObj) {
+      function createLang(language, dataObj, hiddenLanguage) {
          const lang = document.createElement('div');
          let caseDownValue,caseUpValue,capsValue, shiftCapsValue;
+         function create(hidden) {
+            lang.classList.add('language','rus', hidden);
+            caseDownValue = dataObj.caseDown;
+            caseUpValue = dataObj.caseUp;
+            capsValue = dataObj.caps;
+            shiftCapsValue = dataObj.shiftCaps;
+         }
          if (language === 'rus') {
-            lang.classList.add('language','rus', 'hidden');
-            caseDownValue = dataObj.caseDown;
-            caseUpValue = dataObj.caseUp;
-            capsValue = dataObj.caps;
-            shiftCapsValue = dataObj.shiftCaps;
+            if (hiddenLanguage === 'rus') {
+               create('hidden')
+            } else {
+               create();
+            }
          } else {
-            lang.classList.add('language','eng');
-            caseDownValue = dataObj.caseDown;
-            caseUpValue = dataObj.caseUp;
-            capsValue = dataObj.caps;
-            shiftCapsValue = dataObj.shiftCaps;
+            if (hiddenLanguage === 'eng') {
+               create('hidden')
+            } else {
+               create();
+            }
          }
          const caseDown = document.createElement('div');
          caseDown.classList.add( 'value','caseDown');
@@ -1070,7 +1084,6 @@ const keyboard = new Keyboard();
 area.setArea();
 keyboard.setKeyboard();
 keyboard.createListener();
-localStorage.setItem('currentLanguage', 'eng')
 
 
 function checkBtn(key,event) {

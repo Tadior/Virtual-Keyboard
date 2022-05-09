@@ -4,36 +4,76 @@
 .hidden {
    display: none;
 }
+body {
+   background: url(../assets/img/background.jpg) center top / cover no-repeat;
+   font-family: 'Lato', sans-serif;
+}
 .keyboard {
    &-row {
       display: flex;
+      margin-top: 5px;
    }
-   width: 700px;
 }
 .key {
    display: flex;
    align-items: center;
    justify-content: center;
    flex: 1 1 auto;
-   //padding: 10px;
    width: 40px;
    height: 40px;
-   background-color: red;
-   margin: 5px;
+   background-color: #787D98;
+   margin:  0 2.5px;
    cursor: pointer;
-   //width: 40px;
-   //height: 40px;
+   transition: all ease .3s;
 }
 .space {
-   //flex: 1 1 100%;
-   width: 330px;
+   width: 335px;
 }
 .big--btn {
    flex: 0 0 100px;
 }
 .area {
    width: 100%;
+   border: 3px solid #787D98;
+   border-radius: 5px;
+   resize: none;
+   padding: 10px;
+   outline: none;
 }
-.active {
+textarea:focus {
+   border-color:#FFD33E; 
+}
+.container {
+   max-width: 759px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   height: 100%;
+}
+.keyboard .active {
    background-color: green;
+}
+.ArrowLeft, .ArrowDown, .ArrowRight, .ArrowUp, .ControlLeft, .MetaLeft, .AltLeft, .ShiftLeft, .CapsLock, .Tab, .Backquote {
+   background-color: #FFD33E;
+}
+.Enter {
+   background-color: #FB4041;
+}
+.AltRight , .ControlRight, .Slash, .Delete, .Backspace, .Equal, .Minus, .Digit0 , .Digit9 , .Digit8 ,.Digit7 ,.Digit6 ,.Digit5 ,.Digit4 ,.Digit3 , .Digit2 , .Digit1 {
+   background-color: #DADEE1;
+}
+.info {
+   width: max-content;
+   color: #ffff;
+   font-size: 16px;
+   margin: 20px auto 0;
+   padding: 10px 20px;
+   border: 2px solid #FFD33E;
+   background-color: #787D98;
+   border-radius: 10px;
+}
+.title {
+   font-size: 20px;
+   color: #ffff;
+   margin-bottom: 20px;
 }

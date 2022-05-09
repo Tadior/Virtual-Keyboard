@@ -872,16 +872,22 @@ class button {
       btn.addEventListener('mousedown', (event) => {
          if (btn.classList.contains('CapsLock')) {
             if (btn.classList.contains('active')) {
+               isCaps = false;
                btn.classList.remove('active');
                changeActive('caseDown');
                return false;
             }
+            isCaps = true;
             btn.classList.add('active');
             changeActive('caps');
             return false;
          } else if (btn.classList.contains('ShiftLeft') || btn.classList.contains('ShiftRight')) {
             btn.classList.add('active');
-            changeActive('caseUp');
+            if (isCaps === true) {
+               changeActive('shiftCaps');
+            } else {
+               changeActive('caseUp');
+            }
             return false;
          }
          btn.classList.add('active');
@@ -897,7 +903,11 @@ class button {
          if (btn.classList.contains('CapsLock')) {
             return false;
          } else if (btn.classList.contains('ShiftLeft') || btn.classList.contains('ShiftRight')) {
-            changeActive('caseDown')
+            if (isCaps === true) {
+               changeActive('caps')
+            } else {
+               changeActive('caseDown')
+            }
          }
          btn.classList.remove('active');
       })
@@ -951,12 +961,18 @@ class Area {
 
    }
    setArea() {
+      const container = document.createElement('div');
+      container.classList.add('container');
       const textArea = document.createElement('textarea');
       textArea.classList.add('area');
       textArea.cols = 50;
-      textArea.rows = 5;
+      textArea.rows = 10;
       textArea.readOnly = 'false'; 
-      document.body.append(textArea);
+      const title = document.createElement('div');
+      title.classList.add('title');
+      title.textContent = 'Rolling Scopes School, Task: Virtual Keyboard';
+      container.append(title,textArea)
+      document.body.append(container);
    }
 }
 class Keyboard {
@@ -969,7 +985,10 @@ class Keyboard {
       for (let row in buttons) {
          wrapper.append(this.setButtonsRow(buttons[row]));
       }
-      document.querySelector('body').append(wrapper);
+      const  info = document.createElement('div');
+      info.classList.add('info');
+      info.textContent = 'Смена раскладки производится нажатием на левый Ctrl и левый Alt';
+      document.querySelector('.container').append(wrapper, info);
    }
    setButtonsRow(obj) {
       const row = document.createElement('div');

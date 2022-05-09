@@ -359,15 +359,15 @@ const buttons = {
       button14: {
          code: 'Backslash',
          rus: {
-            caseDown: '\/',
+            caseDown: '\\',
             caseUp: '/',
-            caps: '\/',
+            caps: '\\',
             shiftCaps: '/'
          },
          en: {
-            caseDown: '\/',
+            caseDown: '\\',
             caseUp: '|',
-            caps: '\/',
+            caps: '\\',
             shiftCaps: '|'
          }
       },
@@ -899,7 +899,7 @@ class button {
          }
          addText(btn);
       })
-      btn.addEventListener('mouseup', (event) => {
+      btn.addEventListener('mouseup', () => {
          if (btn.classList.contains('CapsLock')) {
             return false;
          } else if (btn.classList.contains('ShiftLeft') || btn.classList.contains('ShiftRight')) {
